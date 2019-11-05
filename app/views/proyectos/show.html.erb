@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<table class="table">
+  <thead>
+    <th>Proyecto</th>
+    <th>Personas</th>
+    <th colspan="3"></th>
+
+  </thead>
+  <tbody>
+    <% @proyectos.each do |proyecto| %>
+      <tr>
+        <td><%= proyecto.title %></td>
+        <td>
+        <% proyecto.personas.each do |persona| %>
+            <%= "#{persona.name} | " %>
+          <% end %>
+        </td>
+      <% end %>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_proyecto_path(@proyecto) %>
+|
+<%= link_to 'Back', proyectos_path %>
